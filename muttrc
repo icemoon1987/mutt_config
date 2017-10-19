@@ -1,0 +1,24 @@
+set beep = yes
+set copy = yes
+set fast_reply = yes                    # don't alter reply mail-addr and subject
+set folder = "~/.mbox"                    #邮件存放目录
+set include = yes                    #回信时是否包含原文
+set spoolfile="~/.mbox"
+set pager_context = 1
+set pager_index_lines = 16
+set pgp_verify_sig = no
+set postponed = "=postponed"
+set record = "=sent"
+set sendmail_wait = 0
+set status_on_top = no
+set to_chars = "+TCEL"
+set pager_stop
+set editor = "vim"
+set use_from = yes
+set realname = "wenhai.pan"
+set from = wenhai.pan@zenjoy.net
+set envelope_from=yes
+set sendmail="/usr/local/bin/msmtp"
+auto_view text/html                                      # view html automatically
+alternative_order text/plain text/enriched text/html     # save html for last
+mailboxes 'echo ~/.mbox/*'

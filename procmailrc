@@ -1,0 +1,10 @@
+PATH=/bin:/usr/bin:/usr/local/bin 
+VERBOSE=off  
+DEFAULT=$HOME/.mbox/
+MAILDIR=$HOME/.mbox/
+LOGFILE=$HOME/.procmaillog
+# Recipes below this comment:
+
+:0:
+* ^TOmutt-user
+wenhai.pan
