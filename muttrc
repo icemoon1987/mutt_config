@@ -1,14 +1,39 @@
+# mutt configurations
+
 set beep = yes
 set copy = yes
-set fast_reply = yes                    # don't alter reply mail-addr and subject
-set folder = "~/.mbox"                    #邮件存放目录
-set include = yes                    #回信时是否包含原文
-set spoolfile="~/.mbox"
+set fast_reply = yes
+set wrap = 0
+set reflow_wrap = 0
+
+# Folder & files to store emails
+
+set imap_user = "your email address"
+set imap_pass = "your password"
+
+#mailboxes `echo ~/.mbox/*`
+#set folder = "~/.mbox"
+#set spoolfile="~/.mbox"
+#set mbox = "=received"
+#set postponed = "=postponed"
+#set record = "=sent"
+
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile="+INBOX"
+set postponed = "+[Gmail]/Drafts"
+#set record = "+[Gmail]/Sent Mail"
+set message_cachedir=~/.mutt/cache/bodies
+set header_cache=~/.mutt/cache/headers
+set certificate_file=~/.mutt/certificates
+
+#set sidebar_visible = yes
+
+# Include previours email when replying
+set include = yes
+
 set pager_context = 1
 set pager_index_lines = 16
 set pgp_verify_sig = no
-set postponed = "=postponed"
-set record = "=sent"
 set sendmail_wait = 0
 set status_on_top = no
 set to_chars = "+TCEL"
@@ -16,9 +41,32 @@ set pager_stop
 set editor = "vim"
 set use_from = yes
 set realname = "wenhai.pan"
-set from = wenhai.pan@zenjoy.net
+
+set from = wenhai.pan@mxplayer.in
 set envelope_from=yes
+
+# Send email configurations
 set sendmail="/usr/local/bin/msmtp"
+
+# Display configurations
 auto_view text/html                                      # view html automatically
 alternative_order text/plain text/enriched text/html     # save html for last
-mailboxes 'echo ~/.mbox/*'
+
+# Alias configurations
+set alias_file = ~/.mutt/aliases
+set sort_alias = alias
+source $alias_file
+
+# Color
+#source ~/.mutt/mutt-colors-solarized/mutt-colors-solarized-dark-256.muttrc
+#source ~/.mutt/mutt-colors-solarized/mutt-colors-solarized-light-256.muttrc
+source ~/.mutt/dracula/dracula.muttrc
+
+# Ordering
+set sort=threads
+set sort_browser=reverse-date
+set sort_aux=reverse-last-date-received
+
+# Signature
+#set signature="~/.mutt/sig"
+
